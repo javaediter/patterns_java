@@ -3,6 +3,9 @@ package ec.editer.patterns;
 import ec.editer.patterns.decorator.DarkRoast;
 import ec.editer.patterns.decorator.Milk;
 import ec.editer.patterns.decorator.Mocha;
+import ec.editer.patterns.factory.PepperoniPizza;
+import ec.editer.patterns.factory.Pizza;
+import ec.editer.patterns.factory.TypePizza;
 import ec.editer.patterns.singleton.SimpleWindowSingleton;
 
 import java.text.NumberFormat;
@@ -26,5 +29,13 @@ public class Application {
         SimpleWindowSingleton singleton = SimpleWindowSingleton.getInstance();
         singleton = SimpleWindowSingleton.getInstance();
         System.out.println("Instances= " + singleton.getCounter());
+
+        System.out.println();
+
+        //Pattern FACTORY
+        Pizza pizza = new Pizza().prepare(TypePizza.PEPPERONI);
+        pizza.bake();
+        pizza.cut();
+        pizza.box();
     }
 }
