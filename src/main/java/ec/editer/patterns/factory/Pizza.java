@@ -2,6 +2,9 @@ package ec.editer.patterns.factory;
 
 public class Pizza {
     protected Pizza pizza;
+    public void prepare(){
+        System.out.println("...preparing");
+    }
     public void bake(){
         System.out.println("...baking");
     }
@@ -10,10 +13,5 @@ public class Pizza {
     }
     public void box(){
         System.out.println("...boxing");
-    }
-    public Pizza prepare(TypePizza type){
-        pizza = PizzaFactory.createPizza(type);
-        System.out.println("...preparing " + pizza.getClass().getSimpleName());
-        return pizza;
     }
 }

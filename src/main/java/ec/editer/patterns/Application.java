@@ -5,6 +5,7 @@ import ec.editer.patterns.decorator.Milk;
 import ec.editer.patterns.decorator.Mocha;
 import ec.editer.patterns.factory.PepperoniPizza;
 import ec.editer.patterns.factory.Pizza;
+import ec.editer.patterns.factory.PizzaStore;
 import ec.editer.patterns.factory.TypePizza;
 import ec.editer.patterns.singleton.SimpleWindowSingleton;
 
@@ -33,9 +34,11 @@ public class Application {
         System.out.println();
 
         //Pattern FACTORY
-        Pizza pizza = new Pizza().prepare(TypePizza.PEPPERONI);
-        pizza.bake();
-        pizza.cut();
-        pizza.box();
+        PizzaStore pizzaStore = new PizzaStore();
+        Pizza pizza = pizzaStore.orderPizza(TypePizza.PEPPERONI);
+        System.out.println(pizza.getClass().getSimpleName());
+
+        //Pattern STRATEGY
+
     }
 }
