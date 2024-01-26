@@ -8,6 +8,8 @@ import ec.editer.patterns.factory.Pizza;
 import ec.editer.patterns.factory.PizzaStore;
 import ec.editer.patterns.factory.TypePizza;
 import ec.editer.patterns.singleton.SimpleWindowSingleton;
+import ec.editer.patterns.strategy.Duck;
+import ec.editer.patterns.strategy.MallardDuck;
 
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -38,7 +40,13 @@ public class Application {
         Pizza pizza = pizzaStore.orderPizza(TypePizza.PEPPERONI);
         System.out.println(pizza.getClass().getSimpleName());
 
-        //Pattern STRATEGY
+        System.out.println();
 
+        //Pattern STRATEGY
+        Duck duck = new MallardDuck();
+        duck.performanceFly();
+        duck.performanceQuack();
+        duck.display();
+        System.out.println(duck);
     }
 }
